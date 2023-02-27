@@ -1,25 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import WeatherCard from './components/WeatherCard';
+import WeatherForm from './components/WeatherForm';
+import {BsFillBookmarkFill} from "react-icons/bs";
+
 
 function App() {
+  const footNoteLink = 'https://www.google.com/search?q=can+you+believe+this+weather+we+are+having&rlz=1C1CHBF_enIN977IN977&oq=can+you+believe+this+weather+we+are+having&aqs=chrome..69i57.240j0j4&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:7a2914ce,vid:FMvw1kk4_Gc';
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BsFillBookmarkFill className='bookmark-icon-home'/>
+      <div className="App-header">
+      <h1 className="primary-heading">
+        Weather App
+      </h1>
+      </div>
+      <WeatherForm/>
+      <WeatherCard/>
+      <footer className='footer'><a href={footNoteLink} className='footer-note'>Can you believe this weather we're having?</a></footer>
     </div>
   );
 }
-
 export default App;
