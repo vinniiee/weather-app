@@ -10,7 +10,6 @@
 
 .App{
   width: 100vw;
-  min-width: 40rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,18 +20,6 @@
   min-width: 40rem;
 }
 
-.app-form{
-  display: flex;
-  width: 100% ;
-  min-width: 20rem;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-}
-.app-form-group{
-  width: 100%;
-  margin-top: 2rem;
-}
 
 .primary-heading{
   color: rgba(250, 250, 250, 1);
@@ -72,49 +59,7 @@
 }
 
 
-.input{
-  color: rgba(125, 125, 125, 1);
-  width: 100%;
-  line-height: 2rem;
-  border: none;
-  font-size: 1.3rem;
-  font-weight: 200;
-  border-radius: 50rem;
-  box-shadow: 1rem .2rem 1rem rgba(0, 0, 0, .2);
-  padding: .5rem 2rem;
-  transition: all .2s;
-  letter-spacing: .5px;
-}
-.input:focus{
-  width: 120%;
-  outline: none;
-}
-.button{
-  /* align-self: end; */
-  /* justify-self: end; */
-  color: rgba(90, 90, 90, 1);
-  font-family: inherit;
-  /* color: rgba(0, 0, 0, 0.763); */
-  width: 100%;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  max-width: 15rem;
-  font-weight: 400;
-  min-width: 13rem;
-  line-height: 1.5rem;
-  font-size: 1.1rem;
-  border: none;
-  padding: .75rem 2.5rem;
-  border-radius: 100rem;
-  transition: all .2s;
-}
-.button:hover{
-  /* transform: scale(1.05); */
-  scale: 1.02;
-  cursor: pointer;
-  /* width: 110%; */
-  box-shadow: 1rem 1rem 1.5rem rgba(0, 0, 0, .2);
-}
+
 
 .footer{
   color: white;
@@ -122,6 +67,7 @@
   letter-spacing: .2px;
   font-weight: 300;
   justify-self: end;
+  margin-top: 6rem;
 }
 .footer-note,.footer-note:focus,.footer-note:visited{
   color:inherit;

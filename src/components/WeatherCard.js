@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './WeatherCard.css';
+import './css/WeatherCard.css';
 import {BsThermometerSun,BsWind,BsFillBookmarkFill} from "react-icons/bs";
 import {WiHumidity} from "react-icons/wi";
 import {GiDroplets} from "react-icons/gi";

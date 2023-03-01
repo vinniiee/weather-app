@@ -91,9 +91,15 @@
     top: 10%; */
     /* /* justify-self: end; */
     /* align-self: center;  */
+    cursor: pointer;
     color: rgba(235,235,235,.4);
     font-size: 2.5rem;
     min-height: 2.5rem;
+    transition: all .2s;
+  }
+  .bookmark-icon-card:hover{
+    scale: 1.1;
+    color: beige;
   }
   .heading-wrap{
     display: flex;
