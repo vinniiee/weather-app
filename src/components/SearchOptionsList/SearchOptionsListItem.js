@@ -1,7 +1,13 @@
-import React from 'react'
+// import React from "react";
+// import "./css/SearchOptionsListItem.css";
+// export default function SearchOptionsListItem({city}) {
+  
 
-export default function SearchOptionsListItem() {
-  return (
-    <div>SearchOptionsListItem</div>
-  )
-}
+//   return (
+//     <div className="search-options-list-item item">
+//       <p>
+//         {city.name}{state}, {city.country}
+//       </p>
+//     </div>
+//   );
+// }

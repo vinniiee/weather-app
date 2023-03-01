@@ -41,6 +41,8 @@
   font-size: 140px;
   align-items: center;
   justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -96,4 +98,11 @@
 .bookmark-icon-home:hover{
   color: white;
   scale: 1.2;
+}
+
+.tip{
+  color: white ;
+  /* font-size: 1.1rem; */
+  letter-spacing: .2px;
+  font-weight: 300;
 }
