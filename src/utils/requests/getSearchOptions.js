@@ -4,7 +4,7 @@ export const getSearchOptions = async (city) => {
   // console.log(regionNames.of("GB")); // "United States"
 
   const response = await fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=2f1e395bd163a3a9ab9e173e79efcf44`
+    `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=145673b1519161888db4ab06e306bdcb`
   );
   const data = await response.json();
     // console.log(data);

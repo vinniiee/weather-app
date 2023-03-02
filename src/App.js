@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './css/App.css';
 import WeatherCard from './components/WeatherCard';
 import WeatherForm from './components/WeatherForm';
@@ -7,7 +6,7 @@ import { useState } from 'react';
 
 
 function App() {
-  const footNoteLink = 'https://www.google.com/search?q=can+you+believe+this+weather+we+are+having&rlz=1C1CHBF_enIN977IN977&oq=can+you+believe+this+weather+we+are+having&aqs=chrome..69i57.240j0j4&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:7a2914ce,vid:FMvw1kk4_Gc';
+  const footNoteLink = Math.random()>.5?'https://www.horda.org/013':'https://www.google.com/search?q=can+you+believe+this+weather+we+are+having&rlz=1C1CHBF_enIN977IN977&oq=can+you+believe+this+weather+we+are+having&aqs=chrome..69i57.240j0j4&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:7a2914ce,vid:FMvw1kk4_Gc';
 
   const [searchItem,setSearchItem] = useState();
 
@@ -20,9 +19,9 @@ function App() {
       </h1>
       </div>
       {!searchItem && <WeatherForm setSearchItem={setSearchItem}/>}
-      {searchItem && <WeatherCard city={searchItem}/>}
+      {searchItem && <WeatherCard city={searchItem} setSearchItem={setSearchItem}/>}
       <footer className='footer'><a href={footNoteLink} className='footer-note'>Can you believe this weather we're having?</a></footer>
-      <p className='tip'>Tip: Click on units to change.</p>
+      <p className='tip'>Tip: Click on units to change. You must choose from the search options pop up.</p>
     </div>
   );
 }

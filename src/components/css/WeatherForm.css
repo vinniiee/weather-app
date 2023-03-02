@@ -57,4 +57,12 @@
     cursor: pointer;
     /* width: 110%; */
     box-shadow: 1rem 1rem 1.5rem rgba(0, 0, 0, .2);
+  }
+  .button:active{
+    scale: 1.01;
   }  
+  .weather-form-error{
+    color: orangered;
+    text-align: left;
+    align-self: start;
+  }

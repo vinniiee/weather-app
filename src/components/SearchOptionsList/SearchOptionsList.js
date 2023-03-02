@@ -2,7 +2,7 @@ import "./css/SearchOptionsList.css";
 export default function SearchOptionsList(props) {
 
   const selectCityHandler=  (cityDisplayName,city)=>{
-    console.log("select city handler...")
+    // console.log("select city handler...")
     props.setCity(cityDisplayName);
     props.setSearchItem(city);
     props.setSearchOptions([]);
