@@ -126,3 +126,7 @@
     text-transform: capitalize;
     text-overflow: clip;
 }
+.active{
+  scale: 1.01;
+  color: white;
+}

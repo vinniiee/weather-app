@@ -2,24 +2,44 @@ import './css/App.css';
 import WeatherCard from './components/WeatherCard';
 import WeatherForm from './components/WeatherForm';
 import {BsFillBookmarkFill} from "react-icons/bs";
-import { useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
+import { getBookmarks } from './utils/requests/bookmarks/getBookmarks';
+import Bookmarks from './components/Bookmarks';
 
 
 function App() {
   const footNoteLink = Math.random()>.5?'https://www.horda.org/013':'https://www.google.com/search?q=can+you+believe+this+weather+we+are+having&rlz=1C1CHBF_enIN977IN977&oq=can+you+believe+this+weather+we+are+having&aqs=chrome..69i57.240j0j4&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:7a2914ce,vid:FMvw1kk4_Gc';
 
   const [searchItem,setSearchItem] = useState();
+  const [bookmarks,setBookmarks] = useState([]);
+  const [showBookmarks,setShowBookmarks] = useState(false);
+  useEffect(()=>{
+      const getSavedCities = async ()=>{
+        const data = await getBookmarks(setBookmarks);
+        console.log("Bookmarks: ",data);
+        setBookmarks(data);
+        // return data;
+      }
+      getSavedCities();
+      // setBookmarks(getSavedCities());
 
+  },[]);
+
+  const nextSearchHandler = (event)=>{
+    setSearchItem();
+  }
+  
   return (
     <div className="App">
-      <BsFillBookmarkFill className='bookmark-icon-home'/>
+      <BsFillBookmarkFill className='bookmark-icon-home' onClick={e=> setShowBookmarks(!showBookmarks)}/>
       <div className="App-header">
       <h1 className="primary-heading">
         Weather App
       </h1>
       </div>
-      {!searchItem && <WeatherForm setSearchItem={setSearchItem}/>}
-      {searchItem && <WeatherCard city={searchItem} setSearchItem={setSearchItem}/>}
+      {(!searchItem && !showBookmarks) && <WeatherForm setSearchItem={setSearchItem}/>}
+      {(searchItem && !showBookmarks) && <Fragment><WeatherCard setBookmarks={setBookmarks} city={searchItem} setSearchItem={setSearchItem}/><button className="button" onClick={nextSearchHandler}>Next Search</button></Fragment>}
+      {showBookmarks && <Bookmarks setBookmarks={setBookmarks} bookmarks={bookmarks}/>}
       <footer className='footer'><a href={footNoteLink} className='footer-note'>Can you believe this weather we're having?</a></footer>
       <p className='tip'>Tip: Click on units to change. You must choose from the search options pop up.</p>
     </div>

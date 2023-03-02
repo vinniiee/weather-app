@@ -4,13 +4,19 @@ import { BsThermometerSun, BsWind, BsFillBookmarkFill } from "react-icons/bs";
 import { GiDroplets } from "react-icons/gi";
 import { ImLocation2 } from "react-icons/im";
 import { getWeatherInfo } from "../utils/requests/getWeatherInfo";
+import { saveBookmark } from "../utils/requests/bookmarks/saveBookmark";
+import { checkBookmark } from "../utils/requests/bookmarks/checkBookmark";
+import { removeBookmark } from "../utils/requests/bookmarks/removeBookmark";
 
 export default function WeatherCard(props) {
   const [weather, setWeather] = useState();
+  const [saved,setSaved] = useState("");
 
   useEffect(() => {
     const getWeather = async () => {
       const info = await getWeatherInfo(props.city);
+      const isBookmarked = await checkBookmark(props.city);
+      setSaved(isBookmarked?"active":"");
       if (!info) {
         props.setSearchItem([]);
       } else {
@@ -21,9 +27,20 @@ export default function WeatherCard(props) {
     getWeather();
   }, [props, setWeather]);
 
+  const bookmarkHandler = async ()=>{
+      // const newCity = new City({...props.city})
+      console.log({...props.city});
+      if(saved.length===0){
+        const savedBookmark = await saveBookmark(props.city,props.setBookmarks);
+        if(savedBookmark){
+          console.log("Saved Bookmark: ",savedBookmark);
+          setSaved("active");
+        }
+      }else{
+        const deleted = await removeBookmark(props.city,props.setBookmarks);
+        setSaved(deleted?"":"active");
+      }
 
-  const nextSearchHandler = (event)=>{
-    props.setSearchItem();
   }
 
 
@@ -68,7 +85,7 @@ export default function WeatherCard(props) {
               {props.city.country}
             </p>
           </div>
-          <BsFillBookmarkFill className="bookmark-icon-card" />
+          <BsFillBookmarkFill className={`bookmark-icon-card ${saved}`} onClick={bookmarkHandler}/>
         </div>
         <div className="partition"></div>
         <div className="weather-info">
@@ -111,7 +128,7 @@ export default function WeatherCard(props) {
         </div>
       </div>
     </div>
-    <button className="button" onClick={nextSearchHandler}>Next Search</button>
+    
     </React.Fragment>
   );
 }
