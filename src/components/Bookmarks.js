@@ -9,6 +9,6 @@ export default function Bookmarks({bookmarks,setBookmarks}) {
             return <WeatherCard setBookmarks={setBookmarks} city={{name:city.name,country:city.country,state:city.state,lat:city.lat,lon:city.lon}}/>
                                         });
   return (
-    <div>{bookmarkList}</div>
+    <div className='bookmarks'>{bookmarkList}</div>
   );
 }
