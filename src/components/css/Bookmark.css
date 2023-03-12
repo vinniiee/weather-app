@@ -4,3 +4,12 @@
     text-align: center;
     letter-spacing: .2px;
 }
+
+.bookmarks{
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+}
