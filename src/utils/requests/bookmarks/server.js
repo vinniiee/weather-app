@@ -1,3 +1,1 @@
-import * as dotenv from 'dotenv';
-dotenv.config();
-export const server = process.env.API_URI||"http://localhost:3001";
+export const server = "https://weather-api-3f09.onrender.com";
