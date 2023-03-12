@@ -13,6 +13,7 @@ export default function WeatherCard(props) {
   const [saved, setSaved] = useState("");
 
   useEffect(() => {
+    
     const getWeather = async () => {
       const info = await getWeatherInfo(props.city);
       const isBookmarked = await checkBookmark(props.city);

@@ -33,9 +33,9 @@ function App() {
     <div className="App">
       <BsFillBookmarkFill className='bookmark-icon-home' onClick={e=> setShowBookmarks(!showBookmarks)}/>
       <div className="App-header">
-      <h1 className="primary-heading">
-        Weather App
-      </h1>
+        <h1 className="primary-heading">
+          Weather App
+        </h1>
       </div>
       {(!searchItem && !showBookmarks) && <WeatherForm setSearchItem={setSearchItem}/>}
       {(searchItem && !showBookmarks) && <Fragment><WeatherCard setBookmarks={setBookmarks} city={searchItem} setSearchItem={setSearchItem}/><button className="button" onClick={nextSearchHandler}>Next Search</button></Fragment>}
