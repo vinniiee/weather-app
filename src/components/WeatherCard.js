@@ -43,7 +43,6 @@ export default function WeatherCard(props) {
       }
     }
   };
-
   const [temperatureUnit, setTemperatureUnit] = useState(false);
   const [windUnit, setWindUnit] = useState(true);
   const tempUnitDisplay = !temperatureUnit ? (
