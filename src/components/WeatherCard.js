@@ -29,14 +29,18 @@ export default function WeatherCard(props) {
 
   const bookmarkHandler = async () => {
     if (saved.length === 0) {
+      setSaved("active");
       const savedBookmark = await saveBookmark(props.city, props.setBookmarks);
-      if (savedBookmark) {
-        console.log("Saved Bookmark: ", savedBookmark);
+      if (!savedBookmark) {
+        setSaved("");
+      }
+      
+    } else {
+      setSaved( "");
+      const deleted = await removeBookmark(props.city, props.setBookmarks);
+      if(!deleted){
         setSaved("active");
       }
-    } else {
-      const deleted = await removeBookmark(props.city, props.setBookmarks);
-      setSaved(deleted ? "" : "active");
     }
   };
 
