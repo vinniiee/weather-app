@@ -8,7 +8,7 @@ import Bookmarks from './components/Bookmarks';
 
 
 function App() {
-  const footNoteLink = Math.random()>.5?'https://www.horda.org/013':'https://www.youtube.com/watch?v=FMvw1kk4_Gc';
+  const footNoteLink = Math.random()>.5?'https://www.un.org/en/climatechange/what-is-climate-change':'https://www.youtube.com/watch?v=FMvw1kk4_Gc';
 
   const [searchItem,setSearchItem] = useState();
   const [bookmarks,setBookmarks] = useState([]);
