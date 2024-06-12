@@ -8,7 +8,7 @@ import Bookmarks from './components/Bookmarks';
 
 
 function App() {
-  const footNoteLink = Math.random()>.5?'https://www.horda.org/013':'https://www.google.com/search?q=can+you+believe+this+weather+we+are+having&rlz=1C1CHBF_enIN977IN977&oq=can+you+believe+this+weather+we+are+having&aqs=chrome..69i57.240j0j4&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:7a2914ce,vid:FMvw1kk4_Gc';
+  const footNoteLink = Math.random()>.5?'https://www.horda.org/013':'https://www.youtube.com/watch?v=FMvw1kk4_Gc';
 
   const [searchItem,setSearchItem] = useState();
   const [bookmarks,setBookmarks] = useState([]);
